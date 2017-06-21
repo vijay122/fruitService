@@ -225,7 +225,7 @@ function getDurations (placearray,res) {
 var ShoppingCartSchema = new Schema({}, { strict: false });
 var ShoppingCart = mongoose.model('ShoppingCart', ShoppingCartSchema);
 
-var connectionString = 'mongodb://root:Vjy4livelytrips@148.72.246.39:27017/placesDB?authSource=admin';
+var connectionString = 'mongodb://root:Vjy4livelytrips@148.72.246.39:27017/landDB?authSource=admin';
 
 mongoose.createConnection(connectionString);
 
@@ -729,6 +729,23 @@ exports.addProduct = function (req, res) {
 		});
 	}
 }
+
+exports.GetRatingEntries = function(req,res)
+{
+	if(req.body.payload.ratingEntry=="Hotel")
+	{
+
+	}
+	if(req.body.payload.ratingEntry=="Place")
+	{
+		
+	}
+	if(req.body.payload.ratingEntry=="Package")
+	{
+		
+	}
+}
+
 exports.GetHomePageItems = function (req, res) {
 	try
 	{
@@ -1139,7 +1156,7 @@ exports.FindCountFunction = function (req,callback) {
 		try {
 			var findRequest = getCreateRequest(req);
 var script ={};
-script.packages="Upto 50% offer in north india tours.";
+script.packages="Upto 50% offer in south india tours.";
 script.hotels="Book a premium hotel now before 15th this month and get a chance to fly france";
 script.events="Buy 1 ticket to Champions league and get 1 ticket absolutely free.";
 			Package.aggregate([
